@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>nugu.trainer</title>
+    </head>
+    <body>
+        <form method="post" action="makegymlist2" id='demo'>
+            <input type="submit"><br>
+        </form>
+        <script type="text/javascript">
+
+            let xhttp = new XMLHttpRequest();
+            
+            xhttp.onreadystatechange = function () {
+                if(xhttp.readyState == 4 && xhttp.status == 200){
+                    jsonfunc(this.responseText); 
+                }
+            }
+            xhttp.open("GET","/static/data/gymJson.json", true);
+            xhttp.send();
+            
+            function jsonfunc( jsonText ) {
+            
+                let json = JSON.parse(jsonText); // String -> json으로 변환
+                
+                let txt = "";
+                let gymlist=[];
+                // 접근법 1
+                let oneform =  document.createElement('input');
+                oneform.setAttribute('type','textarea');
+                oneform.setAttribute('name','json');
+                oneform.setAttribute('value','');
+                for(i=0; i<json.length; i++){
+                    let gymdict = {};
+                    
+                    for(key in json[i]){ // key값 가져오기
+                        gymdict[key] =json[i][key]
+                        let newvalue = oneform.value
+                        newvalue += json[i][key]
+                        newvalue += "*"
+                        oneform.setAttribute('value',newvalue)
+                    }
+                    gymlist.push(gymdict);
+                }
+                document.getElementById('demo').appendChild(oneform)
+                console.log(gymlist);
+                
+            }
+            </script>
+    </body>
+</html>
+
+
