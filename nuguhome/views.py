@@ -18,7 +18,12 @@ def home(request):
     return HttpResponse(template.render(context,request))
 
 def write(request):
-    return render(request,'nuguhome/write.html')
+    latest_gym_list = gymlocation.objects.all()
+    template = loader.get_template('nuguhome/write.html')
+    context = {
+        'latest_gym_list': latest_gym_list,
+    }   
+    return HttpResponse(template.render(context,request))
 
 @csrf_exempt
 def like(request):

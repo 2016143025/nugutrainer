@@ -15,13 +15,47 @@
             <h1 class="name">nugu.trainer</h1>
             <p class="line1">상세한 후기를 작성해주세요.</p>
             <p>아름다운 헬스 문화를 위해, 누군가를 음해하는 목적으로는 후기를 쓰지 맙시다. 솔직한 후기 부탁드립니다.</p>
+            <div id='btflex'>
             <button class="bt1" onclick="location.href='/nuguhome'">다시 홈으로</button>
+            <button class="bt4" onclick="location.href='https://open.kakao.com/o/gEEy5Sze'">헬스장 추가 문의하기</button>
+            </div>
         </div>
-        <form class="writeform" method="post" action="wrote">
-            <label class="formlabel">헬스장</label><input type="text" name='gym' class="formtext1"placeholder="지점까지 정확히 입력해주세요."><br>
-            <label class="formlabel">트레이너</label><input type="text"name='name' class="formtext1" placeholder="초성만 입력해주세요."><br>
+        <form class="writeform" method="post" action="wrote" onsubmit="return checkForm()">
+            <label class="formlabel">헬스장</label><input id='gymname' type="text" name='gym' class="formtext1" list='gymlist' placeholder="리스트에 있는 헬스장만 작성 가능합니다.">
+            <datalist id='gymlist' ></datalist><br>
+            <label class="formlabel">트레이너</label><input  type="text"name='name' class="formtext1" placeholder="초성만 입력해주세요."><br>
             <label id="formlabelid">후기</label><textarea name='inform' class="formtext2" placeholder="상세히 입력해주세요."></textarea>
             <input type="submit" class="bt3" value="후기 제출하기">
         </form>
+        {% if latest_gym_list %}
+        <script>
+            trainerjson = {list:[]}
+            gymlist = [];
+        </script>
+        {% for gym in latest_gym_list%}
+        <script>
+            gymlist.push("{{gym.gym}}");
+        </script>
+        {% endfor %}
+        <script>
+            for(i=0;i<gymlist.length-1;i++){
+                searchgym = document.createElement('option');
+                searchgym.setAttribute('value',gymlist[i]);
+                searchgymlist = document.getElementById('gymlist');
+                searchgymlist.appendChild(searchgym);
+            }
+        function checkForm(){
+            if(gymlist.includes(document.getElementById('gymname').value)){
+                return true;
+            }
+            else{
+                alert("리스트에 있는 헬스장만 작성가능합니다.\n리스트에 없다면 '헬스장 문의하기'를 통해 헬스장 추가를 문의해주세요")
+                return false;
+            }
+        }
+        </script>
+        {% else %}
+            <p>No nugu.gymlist are available.</p>
+        {% endif %}
     </body>
 </html>
