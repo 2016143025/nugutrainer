@@ -43,7 +43,8 @@ def like(request):
 
 @csrf_exempt
 def wrote(request):
-    map = 'https://map.naver.com/v5/search/'+str(request.POST['gym'])
+    map = 'https://map.naver.com/v5/search/'+str(gymlocation.objects.get(gym=request.POST['gym']).location)
+    print(gymlocation.objects.get(gym=request.POST['gym']).location)
     newtrainer = trainer(gym = request.POST['gym'],
                          name = request.POST['name'],
                          inform= request.POST['inform'],
