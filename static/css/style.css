@@ -1,7 +1,9 @@
 body {
     background-color: black;
 }
-a { text-decoration:none }
+a { text-decoration:none;
+    color:rgb(212, 212, 212);
+}
 .body1{
     width: 780px;
     margin: auto;
