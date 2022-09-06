@@ -1,6 +1,7 @@
 body {
     background-color: black;
 }
+a { text-decoration:none }
 .body1{
     width: 780px;
     margin: auto;
