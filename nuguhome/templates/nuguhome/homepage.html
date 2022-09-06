@@ -37,15 +37,6 @@
         {% if latest_trainer_list %}
         <script>
             trainerjson = {list:[]}
-            function ConvertSystemSourcetoHtml(str){
-                str = str.replace(/</g,"&lt;");
-                str = str.replace(/>/g,"&gt;");
-                str = str.replace(/\"/g,"&quot;");
-                str = str.replace(/\'/g,"&#39;");
-                str = str.replace(/\n/g," ");
-                str = str.replace(/\r/g," ");
-                return str;
-            }
         </script>
         {% for trainer in latest_trainer_list%}
         <script>
@@ -56,7 +47,7 @@
             trainerone['like']="{{trainer.like}}"
             trainerone['dislike']="{{trainer.dislike}}"
             trainerone['mapurl']="{{trainer.mapurl}}"
-            trainerone['inform']=ConvertSystemSourcetoHtml("{{trainer.inform}}");
+            trainerone['inform']="{{trainer.inform}}";
             trainerone['created_at']="{{trainer.created_at}}"
             trainerjson.list.push(trainerone)
         </script>

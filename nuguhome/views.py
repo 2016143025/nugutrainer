@@ -4,7 +4,7 @@ from django.template import loader
 from .models import gymlocation, trainer
 from django.views.decorators.csrf import csrf_exempt
 from django.urls import reverse
-import csv
+import csv,re
 
 # Create your views here.
 
@@ -44,10 +44,10 @@ def like(request):
 @csrf_exempt
 def wrote(request):
     map = 'https://map.naver.com/v5/search/'+str(gymlocation.objects.get(gym=request.POST['gym']).location)
-    print(gymlocation.objects.get(gym=request.POST['gym']).location)
+    print(ConvertSystemSourcetoHtml(request.POST['inform']))
     newtrainer = trainer(gym = request.POST['gym'],
                          name = request.POST['name'],
-                         inform= request.POST['inform'],
+                         inform= ConvertSystemSourcetoHtml(request.POST['inform']),
                          mapurl = map)
     newtrainer.save()
     latest_trainer_list = trainer.objects.all()
@@ -80,3 +80,10 @@ def makegymlist2(request):
             j=1
             
     return render(request,'nuguhome/makegymlist.html')
+
+def ConvertSystemSourcetoHtml(some):
+    some = re.sub('\"',"&quot;",some)
+    some = re.sub('\'',"&#39;",some)
+    some = re.sub('\n'," ",some)
+    some = re.sub('\r'," ",some)
+    return some
