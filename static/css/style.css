@@ -1,6 +1,11 @@
 body {
     background-color: black;
 }
+hr{
+    background:rgb(43, 40, 40);;
+    height:1px;
+    border:0;
+}
 a { text-decoration:none;
     color:rgb(212, 212, 212);
 }
@@ -8,8 +13,16 @@ a { text-decoration:none;
     width: 780px;
     margin: auto;
     margin-top: 50px;
+    padding-left: 25px;
     font-family: Nanum Gothic;
     color: rgb(221, 221, 221);
+}
+.body2{
+    display: block;
+    width: 780px;
+    margin: auto;
+    background-color:black;
+    border-radius:10px;
 }
 .line1{
     font-family: Nanum Gothic;
@@ -17,7 +30,7 @@ a { text-decoration:none;
     color: white;
 }
 .name {
-    width: 100px;
+    width: 135px;
 }
 .bt1{
     width: 300px;
@@ -33,46 +46,35 @@ a { text-decoration:none;
     background: radial-gradient(circle at 50% 50%,#d1d1d1 0%, #ffffff 100%);
 }
 .find{
-    border-radius: 5px;
-    margin-left: 15px;
-    width: 100%;
+    border-radius: 8px;
+    width: 758px;
     height: 50px;
-    background-color: darkgrey;
-    text-align: center;
+    background-color: white;
+}
+.find::placeholder{
+    display: inline-block;
+    padding-left: 10px;
 }
 .form{
     display: block;
     margin-top: 50px;
-    width: 95%;
     position: relative;
-}
-.search1{
-    position : absolute;
-    height:30px;
-    top: 13px;
-    left: 25px;
-    margin: 0;
 }
 #search2{
     position: absolute;
-    background-color: darkgrey;
+    background-color: white;
     font-family: Nanum Gothic;
     font-weight: bolder;
     width: 50px;
     height: 100%;
     margin-left: 718px;
     border-radius: 10px;
+    border-color: gray;
 }
 #search2:hover{
-    background: radial-gradient(circle at 50% 50%,#606060 0%, rgb(138, 138, 138) 100%);
+    background: radial-gradient(circle at 0% 0%,white 0%, rgb(214, 213, 213) 100%);
 }
-.body2{
-    display: block;
-    width: 780px;
-    margin: auto;
-    background-color:black;
-    border-radius:10px;
-}
+
 .body3{
     width: 715px;
     margin: auto;
@@ -99,25 +101,28 @@ a { text-decoration:none;
     color:darkgray
 }
 .inform{
-    font-family: Nanum Gothic;
-    font-size: 18px;
+    font-size: 15px;
     color: rgb(121, 121, 121);
+    line-height: 1.6;
 }
 .numbers{
     margin-right: 10px;
 }
+.bar1{
+    color:rgb(121, 121, 121);
+}
 .like{
-    color:red;
+    color:rgb(255, 132, 132);
     margin-right:10px;
 }
 .dislike{
     margin-left: 5px;
-    color:blue
+    color:rgb(154, 154, 246)
 }
 .btlike{
     color:gray;
     background-color: black;
-    margin-left: 440px;
+    margin-left: 485px;
 }
 .btlike:hover{
     background: radial-gradient(circle at 50% 50%,#606060 0%, black 100%);
