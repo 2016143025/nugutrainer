@@ -8,18 +8,16 @@ a { text-decoration:none;
     width: 780px;
     margin: auto;
     margin-top: 50px;
-    font-weight: bold;
+    font-family: Nanum Gothic;
     color: rgb(221, 221, 221);
 }
 .line1{
-    font-weight: bold;
+    font-family: Nanum Gothic;
     font-size: 30px;
     color: white;
 }
 .name {
-    font-family: 'Qwitcher Grypen', cursive;
-    font-size: 50px;
-    color:rgb(212, 212, 212)
+    width: 100px;
 }
 .bt1{
     width: 300px;
@@ -28,7 +26,7 @@ a { text-decoration:none;
     border: 0px;
     margin-top: 10px;
     font-size: 20px;
-    font-weight: bold;
+    font-family: Nanum Gothic;
     border-radius: 3px;
 }
 .bt1:hover{
@@ -58,7 +56,8 @@ a { text-decoration:none;
 #search2{
     position: absolute;
     background-color: darkgrey;
-    font-family: 'Gamja Flower';
+    font-family: Nanum Gothic;
+    font-weight: bolder;
     width: 50px;
     height: 100%;
     margin-left: 718px;
@@ -83,12 +82,12 @@ a { text-decoration:none;
     margin-bottom: 50px;
 }
 .where{
-    font-weight: bold;
+    font-family: Nanum Gothic;
     font-size: 20px;
     color: white;
 }
 .who{
-    font-weight: bold;
+    font-family: Nanum Gothic;
     font-size: 15px;
     color:darkgray
 }
@@ -100,7 +99,7 @@ a { text-decoration:none;
     color:darkgray
 }
 .inform{
-    font-family: 'Gamja Flower';
+    font-family: Nanum Gothic;
     font-size: 18px;
     color: rgb(121, 121, 121);
 }
@@ -141,7 +140,7 @@ a { text-decoration:none;
 }
 .formlabel{
     display: inline-block;
-    font-family:'Gamja Flower';
+    font-weight: bold;
     margin-right: 5px;
     color: white;
     width: 110px;
@@ -149,21 +148,21 @@ a { text-decoration:none;
 }
 #formlabelid{
     display: block;
-    font-family:'Gamja Flower';
+    font-weight: bold;
     margin-right: 5px;
     color: white;
     width: 110px;
     margin-top: 10px;
 }
 .formtext1{
-    font-family:'Gamja Flower';
-    font-size: 18px;
-    width: 200px;
+    font-family: Nanum Gothic;
+    font-size: 13px;
+    width: 250px;
     margin-top: 10px;
 }
 .formtext2{
-    font-family:'Gamja Flower';
-    font-size: 18px;
+    font-family: Nanum Gothic;
+    font-size: 15px;
     position: relative;
     bottom: 30px;
     left: 115px;
@@ -171,6 +170,10 @@ a { text-decoration:none;
     width: 620px;
     height: 300px;
     resize: none;
+}
+.formtext2::placeholder{
+    font-family: Nanum Gothic;
+    font-size: 13px;
 }
 .bt3{
     position: relative;
