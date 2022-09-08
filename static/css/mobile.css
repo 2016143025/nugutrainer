@@ -1,4 +1,5 @@
 .body1{
+    padding-top: 50px;
     font-size: 20px;
     width: 98%;
     margin-top: 50px;
@@ -20,6 +21,7 @@
     background-color: white;
 }
 .body2{
+    padding-top: 120px;
     display: block;
     width: 98%;
     background-color:black;
@@ -30,14 +32,19 @@
     background-color: white;
     font-family: Nanum Gothic;
     font-weight: bolder;
-    width: 50px;
+    width: 150px;
     height: 100%;
-    margin-left: 875px;
+    margin-left: 775px;
     border-radius: 10px;
     border-color: gray;
 }
 .bt1{
     margin-top: 50px;
     margin-bottom: 50px;
+    height: 150px;
     width: 98%;
+    font-size: 60px;
+}
+.find{
+    height: 150px;
 }
