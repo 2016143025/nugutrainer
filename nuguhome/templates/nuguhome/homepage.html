@@ -58,7 +58,6 @@
                 if(j>=0){
                     addtrainer(j);
                     j = j-1;
-                    console.log(j);
                 }
             }
             
@@ -119,7 +118,7 @@
                     btdislike.setAttribute('class','btdislike');
                     btdislike.setAttribute('type','submit');
                     btdislike.setAttribute('name','btlike');
-                    btdislike.setAttribute('value','싫어요 '+String(trainerjson.list[l].dislike));
+                    btdislike.setAttribute('value','싫어요'+String(trainerjson.list[l].dislike));
                     formdislike.appendChild(hiddendislike);
                     formdislike.appendChild(btdislike);
     
@@ -143,8 +142,7 @@
                 document.getElementById('search2').addEventListener('click',function(){
                     document.getElementsByClassName('body2')[0].innerHTML=""
                     let searchtext = document.getElementsByClassName('find')[0].value.toUpperCase();
-                    for(i=trainerjson.list.length-1;i<=0;i--){
-                        console.log(i)
+                    for(i=trainerjson.list.length-1;i>=0;i--){
                         if(trainerjson.list[i].gym.toUpperCase().includes(searchtext)){
                             addtrainer(i);
                         }
