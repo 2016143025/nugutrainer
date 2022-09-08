@@ -17,7 +17,7 @@
 .find{
     border-radius: 8px;
     width: 97%;
-    height: 50px;
+    height: 40px;
     background-color: white;
 }
 .body2{
@@ -26,12 +26,17 @@
     width: 98%;
     background-color:black;
     border-radius:10px;
+    padding-left: 0px;
+}
+.body3{
+    width: 98%;
 }
 #search2{
     position: absolute;
     background-color: white;
     font-family: Nanum Gothic;
     font-weight: bolder;
+    font-size: 40px;
     width: 150px;
     height: 100%;
     margin-left: 775px;
@@ -43,8 +48,13 @@
     margin-bottom: 50px;
     height: 150px;
     width: 98%;
-    font-size: 60px;
+    font-size: 45px;
 }
 .find{
     height: 150px;
+}
+.find::placeholder{
+    position: relative;
+    top: 12px;
+    font-size: 50px;
 }
