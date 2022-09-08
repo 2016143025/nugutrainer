@@ -86,19 +86,6 @@
                     inform.setAttribute('class','inform');
                     inform.innerHTML = trainerjson.list[l].inform
     
-                    let numbers = document.createElement('span');
-                    numbers.setAttribute('class','numbers');
-    
-                    let like = document.createElement('span');
-                    like.setAttribute('class','like');
-                    like.innerHTML = "&#8593; "+trainerjson.list[l].like;
-    
-                    let dislike = document.createElement('span');
-                    dislike.setAttribute('class','dislike');
-                    dislike.innerHTML = trainerjson.list[l].dislike+" &#8595;";
-                    numbers.appendChild(like);
-                    numbers.innerHTML += '<span class="bar1">  |  </span>';
-                    numbers.appendChild(dislike);
     
                     let formlike = document.createElement('form');
                     formlike.setAttribute('class','formlike');
@@ -108,15 +95,15 @@
                     let hiddenlike = document.createElement('input');
                     hiddenlike.setAttribute('type','hidden');
                     hiddenlike.setAttribute('name','hiddenlike');
-                    hiddenlike.setAttribute('value',trainerjson.list[l].id)
+                    hiddenlike.setAttribute('value',trainerjson.list[l].id);
     
                     let btlike = document.createElement('input');
                     btlike.setAttribute('class','btlike');
                     btlike.setAttribute('type','submit');
                     btlike.setAttribute('name','btlike');
-                    btlike.setAttribute('value','좋아요')
-                    formlike.appendChild(hiddenlike)
-                    formlike.appendChild(btlike)
+                    btlike.setAttribute('value','좋아요 '+String(trainerjson.list[l].like));
+                    formlike.appendChild(hiddenlike);
+                    formlike.appendChild(btlike);
     
                     let formdislike = document.createElement('form');
                     formdislike.setAttribute('class','formlike');
@@ -132,16 +119,15 @@
                     btdislike.setAttribute('class','btdislike');
                     btdislike.setAttribute('type','submit');
                     btdislike.setAttribute('name','btlike');
-                    btdislike.setAttribute('value','싫어요')
-                    formdislike.appendChild(hiddendislike)
-                    formdislike.appendChild(btdislike)
+                    btdislike.setAttribute('value','싫어요 '+String(trainerjson.list[l].dislike));
+                    formdislike.appendChild(hiddendislike);
+                    formdislike.appendChild(btdislike);
     
                     let trainerbox = document.querySelector('.body2');
                     trainerform.appendChild(where);
                     trainerform.appendChild(where);
                     trainerform.appendChild(who);
                     trainerform.appendChild(inform);
-                    trainerform.appendChild(numbers)
                     trainerform.appendChild(formlike);
                     trainerform.appendChild(formdislike);
                     trainerbox.appendChild(trainerform);

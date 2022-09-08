@@ -28,7 +28,7 @@ def write(request):
 @csrf_exempt
 def like(request):
     trainerone = trainer.objects.get(id=request.POST['hiddenlike'])
-    if request.POST['btlike'] == '좋아요':
+    if request.POST['btlike'][0] == '좋':
         trainerone.like +=1
         trainerone.save()
     else:

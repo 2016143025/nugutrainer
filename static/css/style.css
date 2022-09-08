@@ -122,18 +122,20 @@ a { text-decoration:none;
 .btlike{
     color:gray;
     background-color: black;
-    margin-left: 485px;
+    margin-left: 10px;
+    box-shadow: -1px -1px 1px 1px gray;
 }
 .btlike:hover{
-    background: radial-gradient(circle at 50% 50%,#606060 0%, black 100%);
+    box-shadow: 1px 1px 0.5px 0.5px gray inset;
 }
 .btdislike{
     color:gray;
     background-color: black;
-    margin-left:10px
+    margin-left: 10px;
+    box-shadow: -1px -1px 1px 1px gray;
 }
 .btdislike:hover{
-    background: radial-gradient(circle at 50% 50%,#606060 0%, black 100%);
+    box-shadow: 1px 1px 0.5px 0.5px gray inset;
 }
 .formlike{
     display: inline;
