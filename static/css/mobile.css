@@ -1,0 +1,42 @@
+.body1{
+    width: 100%;
+    margin-top: 50px;
+    padding-left: 25px;
+    color: rgb(221, 221, 221);
+}
+.name {
+    width: 150px;
+}
+.line1{
+    font-family: Nanum Gothic;
+    font-size: 30px;
+    color: white;
+}
+.find{
+    border-radius: 8px;
+    width: 98%;
+    height: 50px;
+    background-color: white;
+}
+.body2{
+    display: block;
+    width: 100%;
+    background-color:black;
+    border-radius:10px;
+}
+#search2{
+    position: absolute;
+    background-color: white;
+    font-family: Nanum Gothic;
+    font-weight: bolder;
+    width: 50px;
+    height: 100%;
+    margin-left: 903px;
+    border-radius: 10px;
+    border-color: gray;
+}
+.bt1{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 98%;
+}
