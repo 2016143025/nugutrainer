@@ -14,7 +14,6 @@ a { text-decoration:none;
     margin: auto;
     margin-top: 50px;
     padding-left: 25px;
-    font-family: Nanum Gothic;
     color: rgb(221, 221, 221);
 }
 .body2{
@@ -23,6 +22,11 @@ a { text-decoration:none;
     margin: auto;
     background-color:black;
     border-radius:10px;
+}
+.titlename{
+    font-weight: bold;
+    font-family: Nanum Gothic;
+    font-size: large;
 }
 .line1{
     font-family: Nanum Gothic;
