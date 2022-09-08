@@ -46,7 +46,7 @@
                 searchgymlist.appendChild(searchgym);
             }
         function checkForm(){
-            var pattern = /([*ㅏ-ㅣ가-힣ieaou])/i;
+            var pattern = /([*ㅏ-ㅣ가-힣ieaou`~!@#$%^&*|\\\'\";:\/?])/i;
             if(pattern.test(document.getElementById('trainername').value)){
                 alert("초성만 입력해주세요.");
                 return false;
