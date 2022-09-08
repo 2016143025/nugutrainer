@@ -46,7 +46,7 @@
                 searchgymlist.appendChild(searchgym);
             }
         function checkForm(){
-            var pattern = /([*ㅏ-ㅣ가-힣])/i;
+            var pattern = /([*ㅏ-ㅣ가-힣ieaou])/i;
             if(pattern.test(document.getElementById('trainername').value)){
                 alert("초성만 입력해주세요.");
                 return false;
@@ -58,7 +58,6 @@
                 alert("리스트에 있는 헬스장만 작성가능합니다.\n리스트에 없다면 '헬스장 문의하기'를 통해 헬스장 추가를 문의해주세요");
                 return false;
             }
-
         }
         </script>
         {% else %}
