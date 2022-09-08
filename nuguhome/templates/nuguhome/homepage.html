@@ -17,8 +17,9 @@
         <meta property="og:type" content="website">
         <meta property="og:url" content="https://goodssaem.com">
         <meta property="og:title" content="그쌤잘해">
-        <meta property="og:image" content="{{url_for('/static/img/',filename='kakaoimg.png')}}">
+        <meta property="og:image" content="{% static 'kakaoimg.png' %}">
         <meta property="og:description" content="트레이너들의 민낯을 볼 수 있는 솔직한 리뷰">
+        <!-- 다음의 태그는 필수는 아니지만, 포함하는 것을 추천함 -->
         <meta property="og:image:width" content="1200">
         <meta property="og:image:height" content="630">
     </head>
