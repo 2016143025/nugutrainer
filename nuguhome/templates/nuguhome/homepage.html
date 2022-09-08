@@ -70,7 +70,7 @@
                     let map = document.createElement('a');
                     map.setAttribute('class','map');
                     map.setAttribute('href',trainerjson.list[l].mapurl);
-                    map.setAttribute('target','_blank')
+                    map.setAttribute('target','_blank');
                     map.innerHTML = '[위치]';
                     where.appendChild(map);
     
@@ -85,8 +85,8 @@
     
                     let formlike = document.createElement('form');
                     formlike.setAttribute('class','formlike');
-                    formlike.setAttribute('action','{% url 'like' %}')
-                    formlike.setAttribute('method','post')
+                    formlike.setAttribute('action','{% url 'like' %}');
+                    formlike.setAttribute('method','post');
     
                     let hiddenlike = document.createElement('input');
                     hiddenlike.setAttribute('type','hidden');

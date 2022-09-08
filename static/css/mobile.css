@@ -1,26 +1,27 @@
 .body1{
-    width: 100%;
+    font-size: 20px;
+    width: 98%;
     margin-top: 50px;
     padding-left: 25px;
     color: rgb(221, 221, 221);
 }
 .name {
-    width: 150px;
+    width: 300px;
 }
 .line1{
     font-family: Nanum Gothic;
-    font-size: 30px;
+    font-size: 50px;
     color: white;
 }
 .find{
     border-radius: 8px;
-    width: 98%;
+    width: 97%;
     height: 50px;
     background-color: white;
 }
 .body2{
     display: block;
-    width: 100%;
+    width: 98%;
     background-color:black;
     border-radius:10px;
 }
@@ -31,7 +32,7 @@
     font-weight: bolder;
     width: 50px;
     height: 100%;
-    margin-left: 903px;
+    margin-left: 875px;
     border-radius: 10px;
     border-color: gray;
 }
