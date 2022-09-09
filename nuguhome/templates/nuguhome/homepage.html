@@ -45,15 +45,17 @@
         {% for trainer in latest_trainer_list%}
         <script>
             trainerone = {}
-            trainerone['id']="{{trainer.id}}"
-            trainerone['gym']="{{trainer.gym}}"
-            trainerone['name']="{{trainer.name}}"
-            trainerone['like']="{{trainer.like}}"
-            trainerone['dislike']="{{trainer.dislike}}"
-            trainerone['mapurl']="{{trainer.mapurl}}"
-            trainerone['inform']="{{trainer.inform}}";
-            trainerone['created_at']="{{trainer.created_at}}"
-            trainerjson.list.push(trainerone)
+            trainerone['id']="{{trainer.id}}";
+            trainerone['gym']="{{trainer.gym}}";
+            trainerone['name']="{{trainer.name}}";
+            trainerone['like']="{{trainer.like}}";
+            trainerone['dislike']="{{trainer.dislike}}";
+            trainerone['mapurl']="{{trainer.mapurl}}";
+            var informstr = String("{{trainer.inform}}");
+            informstr = informstr.replace(/&lt;br&gt;/g,'<br>');
+            trainerone['inform']=informstr;
+            trainerone['created_at']="{{trainer.created_at}}";
+            trainerjson.list.push(trainerone);
         </script>
         {% endfor %}
         <script>
@@ -87,7 +89,7 @@
     
                     let inform = document.createElement('p');
                     inform.setAttribute('class','inform');
-                    inform.innerHTML = trainerjson.list[l].inform
+                    inform.innerHTML = trainerjson.list[l].inform;
     
     
                     let formlike = document.createElement('form');

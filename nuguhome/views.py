@@ -44,6 +44,7 @@ def like(request):
 @csrf_exempt
 def wrote(request):
     map = 'https://map.naver.com/v5/search/'+str(gymlocation.objects.get(gym=request.POST['gym']).location)
+    print(request.POST['inform']+'123')
     print(ConvertSystemSourcetoHtml(request.POST['inform']))
     newtrainer = trainer(gym = request.POST['gym'],
                          name = request.POST['name'],
@@ -82,8 +83,12 @@ def makegymlist2(request):
     return render(request,'nuguhome/makegymlist.html')
 
 def ConvertSystemSourcetoHtml(some):
-    some = re.sub('\"',"&quot;",some)
-    some = re.sub('\'',"&#39;",some)
-    some = re.sub('\n'," ",some)
-    some = re.sub('\r'," ",some)
+    some = re.sub('\r\n','<br>',some)
     return some
+
+"""    if '\r\n' in some:
+        somelist = some.split('\r\n')
+        resome = '<span>'
+        for i in somelist:
+            resome = resome + i +'<br></span><span>'
+        resome +='</span>'"""
