@@ -1,9 +1,16 @@
+html {
+    height: -webkit-fill-available;
+  }
+body {
+    height: 100vh; /* '-webkit-fill-available'이 유효하지 않을 경우를 대비 */
+    height: -webkit-fill-available;
+}
 .body1{
     padding-top: 100px;
     font-size: 20px;
     width: 98%;
-    margin: auto;
-    margin-left: -2px;
+    margin-right: 0px;
+    padding-left: 0px;
     color: rgb(221, 221, 221);
 }
 .name {
@@ -31,6 +38,7 @@
     padding-left: 0px;
 }
 .body3{
+    margin-left: -10.5px;
     width: 98%;
 }
 #search2{
