@@ -81,7 +81,7 @@ a { text-decoration:none;
 
 .body3{
     width: 715px;
-    margin: auto;
+    margin-left: -10px;
     padding: 20px;
     background-color:rgb(43, 40, 40);
     border-radius: 15px;
