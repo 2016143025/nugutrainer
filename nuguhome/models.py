@@ -10,6 +10,7 @@ class trainer(models.Model):
     mapurl = models.TextField(default='')
     inform = models.TextField(default='')
     created_at = models.DateTimeField(auto_now_add=True)
+    starsocre = models.IntegerField(default=0)
     
     def __str__(self):
         return self.name
