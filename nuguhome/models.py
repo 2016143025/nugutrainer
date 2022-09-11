@@ -15,7 +15,7 @@ class trainer(models.Model):
         return self.name
     
 class score(models.Model):
-    score = models.IntegerField(default=random.randint(8, 10))
+    score = models.IntegerField(default=10)
     
         
 class gymlocation(models.Model):
