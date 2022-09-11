@@ -2,6 +2,10 @@ from django.db import models
 import random
 # Create your models here.
 
+
+class asdf(models.Model):
+    adsfasdf = models.CharField(max_length=20)
+
 class trainer(models.Model):
     gym = models.CharField(default='',max_length=20)
     name = models.CharField(default='',max_length=10)
