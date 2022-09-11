@@ -15,11 +15,8 @@ class trainer(models.Model):
         return self.name
     
 class score(models.Model):
-    id = models.AutoField(primary_key=True)
     score = models.IntegerField(default=random.randint(8, 10))
     
-    def __str__(self):
-        return self.id
         
 class gymlocation(models.Model):
     gym = models.TextField(default='')
