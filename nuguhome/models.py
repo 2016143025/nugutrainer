@@ -15,7 +15,7 @@ class trainer(models.Model):
         return self.name
     
 class score(models.Model):
-    id = models.ForeignKey(trainer, primary_key=True,on_delete=models.CASCADE)
+    created_at = models.ForeignKey(trainer, primary_key=True,on_delete=models.CASCADE)
     score = models.IntegerField(default=10)
     
         
