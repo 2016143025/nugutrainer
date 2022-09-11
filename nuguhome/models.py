@@ -14,9 +14,7 @@ class trainer(models.Model):
     def __str__(self):
         return self.name
     
-class score(models.Model):
-    created_at = models.ForeignKey(trainer, primary_key=True,on_delete=models.CASCADE)
-    score = models.IntegerField(default=10)
+
     
         
 class gymlocation(models.Model):
