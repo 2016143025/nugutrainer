@@ -9,5 +9,6 @@ urlpatterns = [
     path('like',views.like,name='like'),
     path('wrote',views.wrote,name='wrote'),
     path('makegymlist',views.makegymlist,name='makegymlist'),
-    path('makegymlist2',views.makegymlist2, name='makegymlist2')
+    path('makegymlist2',views.makegymlist2, name='makegymlist2'),
+    path('backupdata',views.backupdata, name='backupdata')
 ]

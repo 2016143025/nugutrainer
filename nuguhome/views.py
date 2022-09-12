@@ -4,7 +4,7 @@ from django.template import loader
 from .models import gymlocation, trainer
 from django.views.decorators.csrf import csrf_exempt
 from django.urls import reverse
-import csv,re
+import csv,re,json
 
 # Create your views here.
 
@@ -74,8 +74,6 @@ def makegymlist2(request):
             gymname = i
             j +=1
         else:
-            print(gymname)
-            print(i)
             newgym = gymlocation(gym=gymname,location=i)
             newgym.save()
             j=1
@@ -92,3 +90,23 @@ def ConvertSystemSourcetoHtml(some):
         for i in somelist:
             resome = resome + i +'<br></span><span>'
         resome +='</span>'"""
+        
+def backupdata(request):
+    trainerlist = trainer.objects.all()
+    trainerjson = []
+    for i in trainerlist:
+        trainerdic = {}
+        trainerdic['gym'] = i.gym
+        trainerdic['name'] = i.name
+        trainerdic['like'] = i.like
+        trainerdic['dislike'] = i.dislike
+        trainerdic['mapurl'] = i.mapurl
+        trainerdic['inform'] = i.inform
+        trainerdic['created_at'] = i.created_at
+        trainerjson.append(trainerdic)
+    with open('.\\nuguhome\\static\data\\backuptrainer.json','w',encoding='utf-8') as tr_json:
+        json.dump(trainerjson,tr_json,ensure_ascii=False,default=str,indent=2)
+    return request
+        
+    
+    
