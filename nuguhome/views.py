@@ -106,7 +106,7 @@ def backupdata(request):
         trainerjson.append(trainerdic)
     with open('.\\nuguhome\\static\data\\backuptrainer.json','w',encoding='utf-8') as tr_json:
         json.dump(trainerjson,tr_json,ensure_ascii=False,default=str,indent=2)
-    return request
+    return render(request,'nuguhome/makegymlist.html')
         
     
     
