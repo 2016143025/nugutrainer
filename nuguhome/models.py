@@ -15,12 +15,12 @@ class trainer(models.Model):
     def __str__(self):
         return self.name
     
-'''class score(models.Model):
+class score(models.Model):
     trainer_id = models.ForeignKey(trainer,on_delete=models.CASCADE)
     score = models.IntegerField(default=10)
     
     def __str__(self):
-        return self.score'''
+        return self.score
         
 class gymlocation(models.Model):
     gym = models.TextField(default='')
