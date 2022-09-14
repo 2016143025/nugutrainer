@@ -38,20 +38,6 @@
         <div class="body2">
 
         </div>
-
-        {% if latest_trainer_score %}
-        <script>
-            scorejson = {list2:[]}
-        </script>
-        {% for scoreone in latest_trainer_score%}
-        <script>
-            scoreone = {}
-            scoreone['trainer_id']="{{scoreone.trainer_id}}";
-            scoreone['score']="{{scoreone.score}}";
-            scorejson.list2.push(scoreone);
-        </script>
-        {% endfor %}
-        {%endif%}
         {% if latest_trainer_list %}
         <script>
             trainerjson = {list:[]}
@@ -70,6 +56,22 @@
             trainerone['inform']=informstr;
             trainerone['created_at']="{{trainer.created_at}}";
             trainerjson.list.push(trainerone);
+        </script>
+        {% endfor %}
+        {%endif%}
+        {% if latest_trainer_score %}
+        <script>
+            scorejson = {list2:[]}
+        </script>
+        {% for scoreone in latest_trainer_score%}
+        <script>
+            console.log("{scoreone.trainer_id}}")
+            for(i=0;i<trainerjson.list.length;i++){
+                if("{{scoreone.trainer_id}}"==trainerjson.list[i]['id']){
+                    trainerjson.list[i]['score']="{{scoreone.score}}";
+                }
+            }
+        console.log(trainerjson)
         </script>
         {% endfor %}
 
@@ -104,7 +106,7 @@
 
                     let score = document.createElement('p');
                     who.setAttribute('class','who');
-                    who.innerHTML = '<label>별점: </label>'+scorejson.list2[l].score +' / 10';
+                    who.innerHTML = '<label>별점: </label>'+trainerjson.list[l].score +' / 10';
     
                     let inform = document.createElement('p');
                     inform.setAttribute('class','inform');
