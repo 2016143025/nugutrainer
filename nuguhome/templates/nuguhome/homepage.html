@@ -234,7 +234,7 @@
         <script>
             document.addEventListener('DOMContentLoaded',function (){
                 window.onscroll=()=>{
-                    if((window.innerHeight+window.scrollY)>=document.body.offsetHeight){
+                    if((window.innerHeight+window.scrollY+10)>=document.body.offsetHeight){
                         addtrainer(j);
                         j = j-1;
                     };
