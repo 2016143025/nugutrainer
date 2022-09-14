@@ -78,7 +78,36 @@ a { text-decoration:none;
 #search2:hover{
     background: radial-gradient(circle at 0% 0%,white 0%, rgb(214, 213, 213) 100%);
 }
+#paging{
+    margin-left: -20px;
+    margin-bottom: 20px;
+    padding-top: 10px;
+}
+.pagination{
+    list-style:none;
+	float:left;
+	display:inline;
 
+}
+.page-item{
+    float:left;
+}
+.page-link{
+    width: 50px;
+	padding:4px;
+	margin-right:5px;
+    background-color: #414040;
+	color:rgb(255, 255, 255);
+	font:bold 12px tahoma;
+	border:1px solid #414040;
+	text-align:center;
+	text-decoration:none;
+}
+.page-link:hover, .page-link:focus{
+    color:rgb(180, 180, 180);
+	border:1px solid rgb(161, 161, 161);
+	background-color:rgb(161, 161, 161);
+}
 .body3{
     width: 715px;
     margin: auto;

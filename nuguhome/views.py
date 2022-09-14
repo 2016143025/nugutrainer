@@ -4,6 +4,7 @@ from django.template import loader
 from .models import gymlocation, trainer,score
 from django.views.decorators.csrf import csrf_exempt
 from django.urls import reverse
+from django.core.paginator import Paginator
 import csv,re,json
 
 # Create your views here.
@@ -12,9 +13,12 @@ import csv,re,json
 def home(request):
     latest_trainer_list = trainer.objects.all()
     latest_trainer_score = score.objects.all()
+    page = request.GET.get('page','1')
+    paginator = Paginator(latest_trainer_list,'10')
+    page_obj = paginator.page(page)    
     template = loader.get_template('nuguhome/homepage.html')
     context = {
-        'latest_trainer_list': latest_trainer_list,
+        'latest_trainer_list': page_obj,
         'latest_trainer_score':latest_trainer_score,
     }
     return HttpResponse(template.render(context,request))
@@ -36,13 +40,6 @@ def like(request):
     else:
         trainerone.dislike+=1
         trainerone.save()
-    latest_trainer_list = trainer.objects.all()
-    latest_trainer_score = score.objects.all()
-    template = loader.get_template('nuguhome/homepage.html')
-    context = {
-        'latest_trainer_list': latest_trainer_list,
-        'latest_trainer_score':latest_trainer_score,
-    }
     return redirect('http://goodssaem.com/')
 
 @csrf_exempt
