@@ -16,11 +16,10 @@ class trainer(models.Model):
         return self.name
     
 class score(models.Model):
-    trainer_id = models.ForeignKey(trainer,on_delete=models.CASCADE)
-    score = models.IntegerField(default=9)
-    
+    trainer_id = models.OneToOneField(trainer,on_delete=models.CASCADE)
+    score = models.IntegerField(default=8)
     def __str__(self):
-        return self.trainer_id
+        return str(self.score)
         
 class gymlocation(models.Model):
     gym = models.TextField(default='')

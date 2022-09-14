@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
-from .models import gymlocation, trainer
+from .models import gymlocation, trainer,score
 from django.views.decorators.csrf import csrf_exempt
 from django.urls import reverse
 import csv,re,json
@@ -50,6 +50,7 @@ def wrote(request):
                          name = request.POST['name'],
                          inform= ConvertSystemSourcetoHtml(request.POST['inform']),
                          mapurl = map)
+    newtrainer.score
     newtrainer.save()
     latest_trainer_list = trainer.objects.all()
     template = loader.get_template('nuguhome/homepage.html')
@@ -91,7 +92,7 @@ def ConvertSystemSourcetoHtml(some):
             resome = resome + i +'<br></span><span>'
         resome +='</span>'"""
         
-def backupdata(request):
+'''def backupdata(request):
     trainerlist = trainer.objects.all()
     trainerjson = []
     for i in trainerlist:
@@ -106,7 +107,7 @@ def backupdata(request):
         trainerjson.append(trainerdic)
     with open('.\\nuguhome\\static\data\\backuptrainer.json','w',encoding='utf-8') as tr_json:
         json.dump(trainerjson,tr_json,ensure_ascii=False,default=str,indent=2)
-    return render(request,'nuguhome/homepage.html')
+    return render(request,'nuguhome/homepage.html')'''
         
     
     
