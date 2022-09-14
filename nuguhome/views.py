@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from .models import gymlocation, trainer,score
@@ -43,7 +43,7 @@ def like(request):
         'latest_trainer_list': latest_trainer_list,
         'latest_trainer_score':latest_trainer_score,
     }
-    return HttpResponse(template.render(context,request))
+    return redirect('http://goodssaem.com/')
 
 @csrf_exempt
 def wrote(request):
@@ -57,14 +57,7 @@ def wrote(request):
     newtrainer.save()
     newscore = score(trainer_id=newtrainer,score=request.POST['score'])
     newscore.save()
-    latest_trainer_list = trainer.objects.all()
-    latest_trainer_score = score.objects.all()
-    template = loader.get_template('nuguhome/homepage.html')
-    context = {
-        'latest_trainer_list': latest_trainer_list,
-        'latest_trainer_score':latest_trainer_score,
-    }
-    return HttpResponse(template.render(context,request))
+    return redirect('http://goodssaem.com/')
 
 
 def makegymlist(request):
