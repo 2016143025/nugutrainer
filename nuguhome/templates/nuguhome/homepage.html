@@ -40,7 +40,6 @@
                     {% if latest_trainer_list.has_previous %}
                     <li class="page-item">
                         <a class="page-link" href="http://goodssaem.com/nuguhome/?&page={{ latest_trainer_list.previous_page_number }}">이전</a>
-                        <!-- href로 뎁스 설정 -->
                     </li>
                     {% else %}
                     <li class="page-item">
@@ -109,6 +108,7 @@
             }
         </script>
         {% endfor %}
+        {%endif%}
 
         <script>
             let j = trainerjson.list.length-1;
@@ -217,6 +217,20 @@
         </script>
         {% endfor %}
         {% endif%}
+        {% if latest_trainer_score %}
+        <script>
+            scorejson = {list2:[]}
+        </script>
+        {% for scoreone in latest_trainer_score%}
+        <script>
+            for(i=0;i<trainerjson.list.length;i++){
+                if("{{scoreone.trainer_id}}"==trainerjson.list[i]['id']){
+                    trainerjson.list[i]['score']="{{scoreone.score}}";
+                }
+            }
+        </script>
+        {% endfor %}
+        {%endif%}
         <script>
             document.addEventListener('DOMContentLoaded',function (){
                 window.onscroll=()=>{
