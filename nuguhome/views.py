@@ -37,9 +37,11 @@ def like(request):
         trainerone.dislike+=1
         trainerone.save()
     latest_trainer_list = trainer.objects.all()
+    latest_trainer_score = score.objects.all()
     template = loader.get_template('nuguhome/homepage.html')
     context = {
         'latest_trainer_list': latest_trainer_list,
+        'latest_trainer_score':latest_trainer_score,
     }
     return HttpResponse(template.render(context,request))
 
