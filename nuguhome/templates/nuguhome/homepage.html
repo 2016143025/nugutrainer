@@ -65,13 +65,11 @@
         </script>
         {% for scoreone in latest_trainer_score%}
         <script>
-            console.log("{scoreone.trainer_id}}")
             for(i=0;i<trainerjson.list.length;i++){
                 if("{{scoreone.trainer_id}}"==trainerjson.list[i]['id']){
                     trainerjson.list[i]['score']="{{scoreone.score}}";
                 }
             }
-        console.log(trainerjson)
         </script>
         {% endfor %}
 
@@ -105,8 +103,8 @@
                     who.innerHTML = '<label>트레이너: </label>'+trainerjson.list[l].name;
 
                     let score = document.createElement('p');
-                    who.setAttribute('class','who');
-                    who.innerHTML = '<label>별점: </label>'+trainerjson.list[l].score +' / 10';
+                    score.setAttribute('class','who');
+                    score.innerHTML = '<label>별점: </label>'+trainerjson.list[l].score +' / 10';
     
                     let inform = document.createElement('p');
                     inform.setAttribute('class','inform');
@@ -153,6 +151,7 @@
                     trainerform.appendChild(where);
                     trainerform.appendChild(where);
                     trainerform.appendChild(who);
+                    trainerform.appendChild(score);
                     trainerform.appendChild(inform);
                     trainerform.appendChild(formlike);
                     trainerform.appendChild(formdislike);
