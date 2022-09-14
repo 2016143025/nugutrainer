@@ -87,7 +87,7 @@ a { text-decoration:none;
     list-style:none;
 	float:left;
 	display:inline;
-
+    margin-top: 10px;
 }
 .page-item{
     float:left;
