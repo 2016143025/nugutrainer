@@ -14,12 +14,13 @@ def home(request):
     latest_trainer_list = trainer.objects.all()
     latest_trainer_score = score.objects.all()
     page = request.GET.get('page','1')
-    paginator = Paginator(latest_trainer_list,'10')
+    paginator = Paginator(latest_trainer_list,'30')
     page_obj = paginator.page(page)    
     template = loader.get_template('nuguhome/homepage.html')
     context = {
         'latest_trainer_list': page_obj,
         'latest_trainer_score':latest_trainer_score,
+        'all_trainer_list':latest_trainer_list,
     }
     return HttpResponse(template.render(context,request))
 

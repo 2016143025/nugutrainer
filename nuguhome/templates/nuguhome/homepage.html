@@ -195,6 +195,29 @@
                     trainerbox.appendChild(trainerform);
                 }
             }
+        </script>
+        {% if all_trainer_list %}
+        <script>
+            trainerjson = {list:[]}
+        </script>
+        {% for trainer in all_trainer_list%}
+        <script>
+            trainerone = {}
+            trainerone['id']="{{trainer.id}}";
+            trainerone['gym']="{{trainer.gym}}";
+            trainerone['name']="{{trainer.name}}";
+            trainerone['like']="{{trainer.like}}";
+            trainerone['dislike']="{{trainer.dislike}}";
+            trainerone['mapurl']="{{trainer.mapurl}}";
+            var informstr = String("{{trainer.inform}}");
+            informstr = informstr.replace(/&lt;br&gt;/g,'<br>');
+            trainerone['inform']=informstr;
+            trainerone['created_at']="{{trainer.created_at}}";
+            trainerjson.list.push(trainerone);
+        </script>
+        {% endfor %}
+        {% endif%}
+        <script>
             document.addEventListener('DOMContentLoaded',function (){
                 window.onscroll=()=>{
                     if((window.innerHeight+window.scrollY)>=document.body.offsetHeight){
@@ -229,5 +252,6 @@
         {% else %}
             <p>No nugu.trainer are available.</p>
         {% endif %}
+        
     </body>
 </html>
