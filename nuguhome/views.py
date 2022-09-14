@@ -11,9 +11,11 @@ import csv,re,json
 
 def home(request):
     latest_trainer_list = trainer.objects.all()
+    latest_trainer_score = score.objects.all()
     template = loader.get_template('nuguhome/homepage.html')
     context = {
         'latest_trainer_list': latest_trainer_list,
+        'latest_trainer_score':latest_trainer_score,
     }
     return HttpResponse(template.render(context,request))
 
@@ -50,12 +52,15 @@ def wrote(request):
                          name = request.POST['name'],
                          inform= ConvertSystemSourcetoHtml(request.POST['inform']),
                          mapurl = map)
-    newtrainer.score
     newtrainer.save()
+    newscore = score(trainer_id=newtrainer,score=request.POST['score'])
+    newscore.save()
     latest_trainer_list = trainer.objects.all()
+    latest_trainer_score = score.objects.all()
     template = loader.get_template('nuguhome/homepage.html')
     context = {
         'latest_trainer_list': latest_trainer_list,
+        'latest_trainer_score':latest_trainer_score,
     }
     return HttpResponse(template.render(context,request))
 

@@ -13,7 +13,7 @@ class trainer(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     
     def __str__(self):
-        return self.name
+        return str(self.id)
     
 class score(models.Model):
     trainer_id = models.OneToOneField(trainer,on_delete=models.CASCADE)
