@@ -62,33 +62,33 @@
                     <!-- 이전페이지 -->
                     {% if latest_trainer_list.has_previous %}
                     <li class="page-item">
-                        <a class="page-link" href="http://goodssaem.com/nuguhome/?&page={{ latest_trainer_list.previous_page_number }}">이전</a>
+                        <a class="page-link" href="http://goodssaem.com/?&page={{ latest_trainer_list.previous_page_number }}">이전</a>
                     </li>
                     {% else %}
                     <li class="page-item">
-                        <a class="page-link" href="http://goodssaem.com/nuguhome/?&page=1">이전</a>
+                        <a class="page-link" href="http://goodssaem.com/?&page=1">이전</a>
                     </li>
                     {% endif %}
                     <!-- 페이지리스트 -->
                     {% for page_number in latest_trainer_list.paginator.page_range %}
                     {% if page_number == latest_trainer_list.number %}
                     <li class="page-item active" aria-current="page">
-                        <a class="page-link" href="http://goodssaem.com/nuguhome/?&page={{ page_number }}">{{ page_number }}</a>
+                        <a class="page-link" href="http://goodssaem.com/?&page={{ page_number }}">{{ page_number }}</a>
                     </li>
                     {% else %}
                     <li class="page-item">
-                        <a class="page-link" href="http://goodssaem.com/nuguhome/?&page={{ page_number }}">{{ page_number }}</a>
+                        <a class="page-link" href="http://goodssaem.com/?&page={{ page_number }}">{{ page_number }}</a>
                     </li>
                     {% endif %}
                     {% endfor %}
                     <!-- 다음페이지 -->
                     {% if latest_trainer_list.has_next %}
                     <li class="page-item">
-                        <a class="page-link" href="http://goodssaem.com/nuguhome/?&page={{ latest_trainer_list.next_page_number }}">다음</a>
+                        <a class="page-link" href="http://goodssaem.com/?&page={{ latest_trainer_list.next_page_number }}">다음</a>
                     </li>
                     {% else %}
                     <li class="page-item">
-                        <a class="page-link" href="http://goodssaem.com/nuguhome/?&page={{ latest_trainer_list.number }}">다음</a>
+                        <a class="page-link" href="http://goodssaem.com/?&page={{ latest_trainer_list.number }}">다음</a>
                     </li>
                     {% endif %}
                 </ul>
