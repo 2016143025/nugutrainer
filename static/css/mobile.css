@@ -16,6 +16,9 @@ body {
 .name {
     width: 300px;
 }
+#hidden-item{
+    visibility: hidden;
+}
 .line1{
     font-family: Nanum Gothic;
     font-size: 50px;
@@ -71,4 +74,7 @@ body {
 .inform{
     font-size: 18px;
     color: rgb(224, 223, 223);
+}
+.btlike, .btdislike{
+    width: 90px;
 }
