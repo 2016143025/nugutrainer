@@ -16,8 +16,12 @@ body {
 .name {
     width: 300px;
 }
-.pagelink{
-    width: 100px;
+.page-link{
+    display: inline-block;
+    width: 70px;
+    height: 30px;
+    font-size: large;
+    padding-top: 4px;
 }
 #hidden-item{
     display: none;
