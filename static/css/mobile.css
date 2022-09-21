@@ -16,6 +16,9 @@ body {
 .name {
     width: 300px;
 }
+.pagelink{
+    width: 100px;
+}
 #hidden-item{
     display: none;
 }
