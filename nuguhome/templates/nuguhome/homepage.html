@@ -73,7 +73,7 @@
                     {% for page_number in latest_trainer_list.paginator.page_range %}
                     {% if page_number >= latest_trainer_list.number|add:-5 and page_number <= latest_trainer_list.number|add:5 %}
                     {% if page_number == latest_trainer_list.number %}
-                    <li class="page-item active" aria-current="page">
+                    <li class="page-item active" aria-current="page" id='hidden-item'>
                         <a class="page-link" href="http://goodssaem.com/?&page={{ page_number }}">{{ page_number }}</a>
                     </li>
                     {% else %}

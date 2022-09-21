@@ -84,8 +84,10 @@ body {
 }
 .btlike{
     width: 150px;
+    height: 40px;
 } 
 .btdislike{
     margin-left: 50px;
     width: 150px;
+    height: 40px;
 }
