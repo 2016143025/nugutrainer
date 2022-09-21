@@ -17,7 +17,7 @@ body {
     width: 300px;
 }
 #hidden-item{
-    visibility: collapse;
+    display: none;
 }
 .line1{
     font-family: Nanum Gothic;
