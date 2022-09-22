@@ -27,3 +27,9 @@ class gymlocation(models.Model):
     
     def __str__(self):
         return self.gym
+    
+class RecordSearch(models.Model):
+    searchtext = models.TextField(default='')
+    
+    def __str__(self):
+        return self.id
