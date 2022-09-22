@@ -1,0 +1,25 @@
+#write_body1{
+    width: 90%;
+}
+
+.bt4{
+    display: block;
+    margin-left: 5%;
+}
+.writeform{
+    margin-left: 8%;
+    width: 90%;
+}
+#formlabelid{
+    display: block;
+}
+.formtext2{
+    display: block;
+    bottom: 0px;
+    left: 0px;
+    width: 93.5%;
+}
+.bt3{
+    display: block;
+    margin-top: 30px;
+}
