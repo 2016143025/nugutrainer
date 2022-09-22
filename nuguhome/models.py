@@ -32,4 +32,4 @@ class RecordSearch(models.Model):
     searchtext = models.TextField(default='')
     
     def __str__(self):
-        return self.id
+        return str(self.id)

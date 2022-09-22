@@ -54,7 +54,7 @@
             <button class="bt1" onclick="location.href='/write'">트레이너후기 쓰기</button>
             <form class="form" onsubmit="return false">
                 <input type="button" id="search2" name="result" value="검색">
-                <input class="find" type="text" name="id" maxlength="40" placeholder="헬스장 검색하기" required />
+                <input class="find" id="findtext" type="text" name="id" maxlength="40" placeholder="헬스장 검색하기" required />
             </form>
             <div id="paging">
                 <ul class="pagination">
@@ -287,6 +287,23 @@
                 }
             });
         </script>
-        
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <script>
+            $(document).ready(function(){
+                $('#search2').click(function(){
+                    var searchtext = $('#findtext').val();
+                    $.ajax({
+                        type: "POST",
+                        url: "record",
+                        data: {
+                            'text':searchtext
+                        },
+                        error: function(){
+                            alert(searchtext);
+                        }
+                    });
+                })
+            })
+        </script>
     </body>
 </html>

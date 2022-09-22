@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import gymlocation, trainer, score
+from .models import gymlocation, trainer, score, RecordSearch
 @admin.register(trainer)
 class trainerAdmin(admin.ModelAdmin):
     list_display= ['id','gym','name','created_at']
@@ -10,3 +10,7 @@ class trainerAdmin(admin.ModelAdmin):
 #admin.site.register(trainer)
 admin.site.register(score)
 admin.site.register(gymlocation)
+
+@admin.register(RecordSearch)
+class trainerAdmin(admin.ModelAdmin):
+    list_display= ['id','searchtext']

@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from django.template import loader
-from .models import gymlocation, trainer,score
+from .models import gymlocation, trainer,score, RecordSearch
 from django.views.decorators.csrf import csrf_exempt
 from django.urls import reverse
 from django.core.paginator import Paginator
@@ -9,7 +9,7 @@ import csv,re,json
 
 # Create your views here.
 
-
+@csrf_exempt
 def home(request):
     latest_trainer_list = trainer.objects.all()
     latest_trainer_score = score.objects.all()
@@ -106,6 +106,10 @@ def ConvertSystemSourcetoHtml(some):
     with open('.\\nuguhome\\static\data\\backuptrainer.json','w',encoding='utf-8') as tr_json:
         json.dump(trainerjson,tr_json,ensure_ascii=False,default=str,indent=2)
     return render(request,'nuguhome/homepage.html')'''
-        
-    
-    
+
+@csrf_exempt        
+def record(request):
+    obj = RecordSearch(searchtext=request.POST.get('text'))
+    obj.save()
+    context = {'text':obj.searchtext}
+    return JsonResponse(context)
