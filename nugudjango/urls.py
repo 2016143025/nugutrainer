@@ -19,6 +19,7 @@ from . import views
 
 urlpatterns = [
     path('', include('nuguhome.urls')),
+    path('nuguhome/', include('nuguhome.urls')),
     path('admin/', admin.site.urls),
     #path('',views.gohome,name='gohome'),
 ]
