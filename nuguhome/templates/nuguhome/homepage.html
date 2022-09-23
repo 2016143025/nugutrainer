@@ -3,7 +3,6 @@
 {% load static %}
 <html lang="ko">
     <head>   
-        
         <meta charset="utf-8">
         <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
         <title>그쌤잘해 : 트레이너들의 민낯을 볼 수 있는 솔직한 리뷰</title>
@@ -302,6 +301,23 @@
                             alert(searchtext);
                         }
                     });
+                })               
+            })
+            $(document).ready(function(){
+                $('#findtext').keydown(function(key){
+                    if (key.keyCode==13){
+                        var searchtext = $('#findtext').val();
+                        $.ajax({
+                            type: "POST",
+                            url: "record",
+                            data: {
+                                'text':searchtext
+                            },
+                            error: function(){
+                                alert(searchtext);
+                            }
+                        });
+                    }
                 })
             })
         </script>
